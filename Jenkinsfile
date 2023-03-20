@@ -117,5 +117,19 @@ stage('upload war file to nexus'){
 
 
 }
+
+stage('Docker imagge Build'){
+                
+                steps{
+                    
+                    script{
+
+sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+sh 'docker image tag $JOB_NAME:v1.$BUILD_ID aish1320/$JOB_NAME:v1.$BUILD_ID'
+sh 'docker image tag $JOB_NAME:v1.$BUILD_ID aish1320/$JOB_NAME:latest'
+
+}
+}}
+
 }}
 
