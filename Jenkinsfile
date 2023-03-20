@@ -108,7 +108,7 @@ stage('upload war file to nexus'){
                        nexusUrl: '34.224.166.18:8081',
                         nexusVersion: 'nexus3', 
                         protocol: 'http',
-                         repository: 'demoapp-SNAPSHOT', 
+                         repository: 'demoapp', 
                          version: "${readPomversion.version}"
 
                         
