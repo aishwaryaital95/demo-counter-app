@@ -93,7 +93,7 @@ stage('upload war file to nexus'){
                     
                     script{
                         
-                        
+                      def readPomversion = readMavenPom file: 'pom.xml'   
                 nexusArtifactUploader artifacts:
                  [
                     [artifactId: 'springboot',
@@ -107,7 +107,7 @@ stage('upload war file to nexus'){
                         nexusVersion: 'nexus3', 
                         protocol: 'http',
                          repository: 'demoapp', 
-                         version: '1.0.0'
+                         version: "${readPomversion.version}"
 
                         
                     }
