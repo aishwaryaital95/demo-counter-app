@@ -59,7 +59,7 @@ stage('Maven build'){
                 
                 script{
                     
-                    withSonarQubeEnv(credentialsId: 'sonar-api') {
+                    withSonarQubeEnv(credentialsId: 'sonar-qube-api') {
                         
                         sh 'mvn clean package sonar:sonar'
                     }
