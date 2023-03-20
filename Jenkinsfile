@@ -95,7 +95,7 @@ stage('upload war file to nexus'){
                         
                       def readPomversion = readMavenPom file: 'pom.xml' 
 
-                      def nexusRepo=readmavenPom.version.endsWith("SNAPSHOT") ? "demoapp-snapshot" : "demoapp"  
+                      def nexusRepo=readPomversion.version.endsWith("SNAPSHOT") ? "demoapp-snapshot" : "demoapp"  
                 nexusArtifactUploader artifacts:
                  [
                     [artifactId: 'springboot',
