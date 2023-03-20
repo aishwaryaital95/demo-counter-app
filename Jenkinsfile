@@ -67,7 +67,7 @@ stage('Maven build'){
                     
                 }
             
-
+  }
  stage('Quality Gate Status'){
                 
                 steps{
